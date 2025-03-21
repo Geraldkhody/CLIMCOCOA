@@ -1,0 +1,21 @@
+/* .navLink {
+    content: "";
+
+}
+
+.navLink::before:hover {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 2px;
+} */
+
+.hamburger {
+    animation: humburger 2s ease;
+}
+
+@keyframes hamburger {
+    from {
+        
+    }
+}

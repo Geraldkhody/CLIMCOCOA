@@ -1,0 +1,13 @@
+.inputField {
+    animation: inputField ease 1s;
+    z-index: 0;
+}
+
+@keyframes inputField {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+}
+
