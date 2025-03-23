@@ -15,8 +15,8 @@ const Footer = () => {
     { name: 'Twitter (X)', href: '#' },
   ];
   const contactInfo = {
-    email: "stananabs@gmail.com",
-    phone: "+233 597660303",
+    email: "climcocoae@ug.edu.gh",
+    phone: "(+233) 279943213",
   };
 
   return (

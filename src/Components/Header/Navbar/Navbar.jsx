@@ -9,24 +9,23 @@ const navLinks = [
   {
     name: "About Us",
     dropdown: [
-      { name: "Summary", path: "/about/summary" },
-      { name: "State of Art", path: "/about/state-of-art" },
+      { name: "Summary", path: "#" },
+      { name: "State of Art", path: "#" },
     ],
   },
-  { name: "Resources", path: "/resource" },
+  { name: "Resources", path: "#" },
   {
     name: "Project",
-    dropdown: [{ name: "Research", path: "/resources/research" }],
+    dropdown: [{ name: "Research", path: "#" }],
   },
   {
     name: "People",
     dropdown: [
-      { name: "Participants", path: "/people/participants" },
-      { name: "Management", path: "/people/management" },
-      { name: "Project Members", path: "/people/project-members" },
+      { name: "Participants Management", path: "#" },
+      { name: "Project Members", path: "#" },
     ],
   },
-  { name: "Contact Us", path: "/contact" },
+  { name: "Contact Us", path: "#" },
 ];
 
 const Navbar = () => {
