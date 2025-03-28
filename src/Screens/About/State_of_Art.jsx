@@ -116,6 +116,13 @@ const State_of_Art = () => {
         <div className="w-[70%] sm:w-[50%]  md:w-[37%] lg:w-[30%]   ">
           <img src={sectionImage3} alt="" className="rounded-3xl" />
         </div>
+        
+        {/* ========== Work on this later. it is how the image will behave and then make it responsive ============= */}
+        
+        {/* <div className="w-[80%] sm:w-[50%]  md:w-[37%] lg:w-[30%] h-[25rem] md:h-auto  ">
+          <img src={sectionImage3} alt="" className="rounded-3xl w-full h-full object-cover" />
+        </div> */}
+        
       </div>
     </div>
   );
