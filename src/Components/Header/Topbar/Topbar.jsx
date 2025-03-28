@@ -14,7 +14,7 @@ const Topbar = () => {
 
   return (
     <div className="w-full border-b bg-green-700 text-white ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-8 md:min-h-12 flex flex-col sm:flex-row space-y-2 sm:space-y-0 py-1 justify-between items-center text-xs md:text-sm   ">
+      <div className="wrapper min-h-8 md:min-h-12 flex flex-col sm:flex-row space-y-2 sm:space-y-0 py-1 justify-between items-center text-xs md:text-sm   ">
         {/* Left Side */}
         <div className="w-full flex items-center justify-between relative z-10 ">
           <div className="flex flex-col sm:flex-row sm:items-center space-x-2 md:space-x-4 ">

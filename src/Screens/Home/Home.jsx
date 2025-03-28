@@ -80,7 +80,7 @@ const Home = () => {
     <div >
       <Hero />
       {/* Introduction Section */}
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <div className='wrapper'>
         <Section
           title="Building Resilience for Ghana’s Cocoa Future"
           subtitle="Understanding the impacts of climate change on cocoa production and empowering farmers with innovative agroforestry solutions."

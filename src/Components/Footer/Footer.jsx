@@ -20,8 +20,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-green-900 text-white py-16">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer className="bg-green-900 mt-10 text-white py-16">
+      <div className="wrapper">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo & Description */}

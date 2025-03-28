@@ -7,7 +7,7 @@ const Hero = () => {
       className="relative h-[calc(100vh-8rem)] bg-cover bg-center"
       style={{ backgroundImage: `url(${heroImage})` }}
     >
-      <div className="absolute inset-0 bg-black/50 bg-opacity/50 flex items-center justify-center">
+      <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
         <div className="text-center text-white max-w-3xl px-4">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mx-8 mb-6">
             Building Resilience for Ghana's Cocoa Future
