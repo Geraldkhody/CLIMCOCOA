@@ -1,0 +1,22 @@
+.left {
+    animation: left 1.3s ease ;
+}
+
+@keyframes left {
+    from {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+}
+
+
+.right {
+    animation: right 1.3s ease ;
+}
+
+@keyframes right {
+    from {
+        transform: translateX(50%);
+        opacity: 0;
+    }
+}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import DropdownArrow from "@/assets/dropdown_arrow.svg";
 import style from "./Navbar.module.css";
 import { Close, Hamburger } from "../../../Constant";
-// import { a } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -41,9 +41,9 @@ const Navbar = () => {
       <div className="wrapper">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <a to="/" className="text-lg md:text-xl lg:text-2xl font-bold cursor-pointer">
+          <NavLink to="/" className="text-lg md:text-xl lg:text-2xl font-bold cursor-pointer">
             CLIMCOCOA
-          </a>
+          </NavLink>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex md:text-sm lg:text-[16px] md:space-x-5 lg:space-x-10">
@@ -60,21 +60,21 @@ const Navbar = () => {
                     {dropdownOpen === index && (
                       <div className="absolute -left-1/3 mt-2 bg-white text-gray-800 border border-green-600 rounded-md shadow-md min-w-52 ">
                         {link.dropdown.map((sublink, subIndex) => (
-                          <a
+                          <NavLink
                             key={subIndex}
-                            href={sublink.path}
+                            to={sublink.path}
                             className="block px-4 py-2 hover:bg-green-600 hover:text-green-100 text-sm"
                           >
                             {sublink.name}
-                          </a>
+                          </NavLink>
                         ))}
                       </div>
                     )}
                   </>
                 ) : (
-                  <a href={link.path} className="hover:text-green-100">
+                  <NavLink to={link.path} className="hover:text-green-100">
                     {link.name}
-                  </a>
+                  </NavLink>
                 )}
               </div>
             ))}
@@ -112,21 +112,21 @@ const Navbar = () => {
                     {dropdownOpen === index && (
                       <div className="bg-white text-gray-800 border rounded-md shadow-md w-full mt-2">
                         {link.dropdown.map((sublink, subIndex) => (
-                          <a
+                          <NavLink
                             key={subIndex}
                             to={sublink.path}
                             className="block px-4 py-2 hover:bg-gray-200"
                           >
                             {sublink.name}
-                          </a>
+                          </NavLink>
                         ))}
                       </div>
                     )}
                   </>
                 ) : (
-                  <a to={link.path} className="block hover:text-gray-300">
+                  <NavLink to={link.path} className="block hover:text-gray-300">
                     {link.name}
-                  </a>
+                  </NavLink>
                 )}
               </div>
             ))}

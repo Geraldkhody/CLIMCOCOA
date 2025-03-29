@@ -1,0 +1,8 @@
+/* Custom styles if needed */
+.researchCard {
+    transition: transform 0.2s ease-in-out;
+  }
+  .researchCard:hover {
+    transform: scale(1.02);
+  }
+  
