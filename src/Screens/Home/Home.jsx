@@ -6,6 +6,7 @@ import ClimateChnage from "@/assets/Key aspect/Climate health.png";
 import Agroforestry from "@/assets/Key aspect/agroforestry.png";
 import Socioeconomic from "@/assets/Key aspect/socioeconomic.png";
 import Capacity from "@/assets/Key aspect/Knowledge and tools.png"
+import { Archive } from 'lucide-react';
 
 // Reusable Card Component
 const Card = ({ icon, title, description, className, children }) => (

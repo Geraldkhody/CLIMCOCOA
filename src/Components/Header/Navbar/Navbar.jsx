@@ -13,7 +13,7 @@ const navLinks = [
       { name: "State of Art and Rationale", path: "/about/state_of_art" },
     ],
   },
-  { name: "Resources", path: "#" },
+  { name: "Resources", path: "/resource" },
   {
     name: "Project",
     dropdown: [{ name: "Research", path: "#" }],

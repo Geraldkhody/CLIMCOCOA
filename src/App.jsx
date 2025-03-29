@@ -6,6 +6,7 @@ import About from './Screens/About/Summary'
 import Contact from './Screens/Contact/Contact'
 import AboutLayout from './Components/Layout/AboutLayout'
 import State_of_Art from './Screens/About/State_of_Art'
+import Resource from './Screens/Resource/Resource'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
               <Route path='summary' element={<About />} />
               <Route path='state_of_art' element={<State_of_Art />} />
             </Route>
+            <Route path='resource' element={<Resource />} />
             <Route path='contact' element={<Contact />} />
           </Route>
         </Routes>

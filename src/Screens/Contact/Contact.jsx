@@ -1,3 +1,4 @@
+import { Mail, MapPin, Pencil, PhoneCall, User } from 'lucide-react';
 import React, { useState } from 'react';
 
 const Contact = () => {
@@ -27,7 +28,7 @@ const Contact = () => {
         <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold'>Have Questions? <br /> Get in Touch</h1>
         <div className='space-y-4'>
           <div className='flex gap-4 mt-10 items-start'>
-            <div className='p-2 bg-green-200 rounded-md'>img</div>
+            <div className='p-2 bg-green-200 rounded-md'><MapPin size={20} /></div>
             <p>
               <span className='location'>Climcocoa Project Office.</span>
               <span className='location'>Department of Geography and Resource Developement.</span>
@@ -36,23 +37,21 @@ const Contact = () => {
             </p>
           </div>
           <div className='flex gap-4 items-center '>
-            <div className='p-2 bg-green-200 rounded-md'>img</div>
+            <div className='p-2 bg-green-200 rounded-md'><Mail size={20} /></div>
             <p className='text-sm'>climcocoae@ug.edu.gh</p>
           </div>
           <div className='flex gap-4 items-center '>
-            <div className='p-2 bg-green-200 rounded-md'>img</div>
+            <div className='p-2 bg-green-200 rounded-md'><PhoneCall size={20} /></div>
             <p className='text-sm'>+233 279943213</p>
           </div>
         </div>
       </div>
       
-      {/* Left Column: Form */}
       <div className="md:w-2/3  p-8 ">
-        {/* <h2 className="text-3xl font-bold mb-4">Hey! Let's Talk</h2> */}
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className='flex gap-4'>
             <div className="input-field">
-              <div className='w-6 h-6 mx-2 border'></div>
+              <div className='w-6 h-6 mx-2 '><User size={18} /></div>
               <input
                 type="text"
                 name="name"
@@ -64,7 +63,7 @@ const Contact = () => {
               />
             </div>
             <div className="input-field">
-              <div className='w-6 h-6 mx-2 border'></div>
+              <div className='w-6 h-6 mx-2 '><Mail size={18} /></div>
               <input
                 type="email"
                 name="email"
@@ -78,7 +77,7 @@ const Contact = () => {
           </div>
           <div className='flex gap-4'>
             <div className="input-field">
-              <div className='w-6 h-6 mx-2 border'></div>
+              <div className='w-6 h-6 mx-2 '><PhoneCall size={18} /></div>
               <input
                 type="tel"
                 name="phone"
@@ -90,7 +89,7 @@ const Contact = () => {
               />
             </div>
             <div className="input-field">
-              <div className='w-6 h-6 mx-2 border'></div>
+              <div className='w-4 '></div>
               <input
                 type="text"
                 name="subject"
@@ -103,7 +102,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="textarea-field">
-              <div className='w-6 h-6 mx-2 border'></div>
+              <div className='w-6 h-6 mx-2'><Pencil size={18} /></div>
             <textarea
               name="message"
               placeholder="Your Message"
@@ -116,34 +115,6 @@ const Contact = () => {
           <button type="submit" className=" bg-green-700 hover:bg-green-800 text-white text-sm font-semibold py-3 px-8 cursor-pointer rounded-lg">Send Now</button>
         </form>
       </div>
-
-      {/* Right Column: Contact Info */}
-      {/* <div className="md:w-1/3 bg-teal-500 p-6 rounded-lg flex flex-col justify-center">
-        <div className="mb-6">
-          <h3 className="text-lg font-semibold">Call Anytime</h3>
-          <p>+91 23678 27867</p>
-          <p>+91 67678 92878</p>
-        </div>
-        <div className="mb-6">
-          <h3 className="text-lg font-semibold">Send Email</h3>
-          <p>connect@ifirms.com</p>
-          <p>hello@ifirms.com</p>
-        </div>
-        <div className="mb-6">
-          <h3 className="text-lg font-semibold">Visit Us</h3>
-          <p>20 Island Park Road, New Jersey, New York, USA</p>
-        </div>
-        <div>
-          <h3 className="text-lg font-semibold">Follow us</h3>
-          <div className="flex space-x-4 mt-2">
-            {['linkedin', 'instagram', 'facebook', 'twitter'].map((platform) => (
-              <a key={platform} href="#" className="text-white text-2xl">
-                <i className={`fab fa-${platform}`} />
-              </a>
-            ))}
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };
