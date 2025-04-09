@@ -2,12 +2,8 @@ import React from "react";
 import sectionImage1 from "@/assets/cocoa/image1.jpg";
 import sectionImage2 from "@/assets/cocoa/image2.jpg";
 import sectionImage3 from "@/assets/cocoa/image4.jpg";
-import People1 from "@/assets/people/Picture1.png";
-import People2 from "@/assets/people/Picture2.png";
-import People3 from "@/assets/people/Picture3.png";
-import People4 from "@/assets/people/Picture4.jpg";
-import People5 from "@/assets/people/Picture5.png";
-import People6 from "@/assets/people/Picture6.png";
+import Members from "../../Components/Members/Members";
+
 
 const Section = ({ head, body }) => (
   <div className="">
@@ -16,14 +12,6 @@ const Section = ({ head, body }) => (
   </div>
 );
 
-const Card = ({ image, name }) => (
-  <div className="">
-    <div className="w-[15rem] h-[15rem] mb-2">
-      <img src={image} alt="" className="w-full h-full object-cover rounded-2xl" />
-    </div>
-    <p className="text-center text-green-700 font-semibold">{name}</p>
-  </div>
-);
 
 const About = () => {
   const vision = [
@@ -37,14 +25,7 @@ const About = () => {
     },
   ];
 
-  const peoples = [
-    { name: "Proff Kwadwo Owusu", image: People1 },
-    { name: "Dr. Mette Fog Olwig", image: People2 },
-    { name: "Dr. Eric Opoku Mensah", image: People3 },
-    { name: "Dr. Sylvester Afram Boadi", image: People4 },
-    { name: "Dr. Bismark Kwesi Asitoakor", image: People5 },
-    { name: "Dr. Aske Skovmand Bosselmann ", image: People6 },
-  ];
+
 
   return (
     <>
@@ -123,12 +104,8 @@ const About = () => {
       </div>
 
       <div className="wrapper mb-26">
-        <h1 className="text-xl sm:text-2xl  font-bold text-center text-green-800">Project Member</h1>
-        <div className="mt-10  lg:px-12 xl:px-15 grid sm:grid-cols-2 lg:grid-cols-3 gap-y-8  place-items-center">
-          {peoples.map((people) => (
-            <Card image={people.image} name={people.name} />
-          ))}
-        </div>
+        <h1 className="text-xl sm:text-2xl  font-bold text-center text-green-800">Project Team</h1>
+        <Members />
       </div>
     </>
   );

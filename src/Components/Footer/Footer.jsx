@@ -33,7 +33,7 @@ const Footer = () => {
           {/* Links Section */}
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-20">
             <LinkSection title="Home" links={quickLinks} />
-            <LinkSection title="Social" links={socialLinks} />
+            {/* <LinkSection title="Social" links={socialLinks} /> */}
             <ContactSection title="Contact" contact={contactInfo} />
           </div>
         </div>

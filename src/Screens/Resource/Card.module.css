@@ -1,8 +1,14 @@
-/* Custom styles if needed */
 .researchCard {
-    transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  animation: card 1.5s ease;
+}
+.researchCard:hover {
+  transform: scale(1.02);
+}
+
+@keyframes card {
+  from {
+    transform: translateY(20%);
+    opacity: 0;
   }
-  .researchCard:hover {
-    transform: scale(1.02);
-  }
-  
+}

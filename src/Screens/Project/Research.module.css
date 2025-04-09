@@ -1,0 +1,21 @@
+.presentation {
+    animation: presentation 1s ease;
+}
+
+@keyframes presentation {
+    from {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+}
+
+.head {
+    animation: head 1s ease;
+}
+
+@keyframes head {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}

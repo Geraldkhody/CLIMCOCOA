@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import ResearchCard from "./Card";
 import { Menu } from "lucide-react";
 
-const Resource = () => {
+const Publications = () => {
     const [showSidebar, setShowSidebar] = useState(false);
 
     const journalArticlesRef = useRef(null)
@@ -132,11 +132,8 @@ const Resource = () => {
   };
 
   const scrollToSection = (ref) => {
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
-      setShowSidebar(false); // Close sidebar on mobile after clicking
-      console.log("oasdjakd")
-    }
+    ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setShowSidebar(false); 
   };
 
   return (
@@ -158,15 +155,15 @@ const Resource = () => {
       >
         <h1 className="font-bold text-lg">Categories</h1>
         <div className="ml-3 space-y-4">
-          <p className="cursor-pointer" onClick={scrollToSection(journalArticlesRef)}>Refereed Journal Articles</p>
-          <p className="cursor-pointer" onClick={scrollToSection(booksRef)}>Book</p>
-          <p className="cursor-pointer" onClick={scrollToSection(bookChaptersRef)}>Book Chapters</p>
+          <p className="block cursor-pointer" onClick={() => scrollToSection(journalArticlesRef)}>Refereed Journal Articles</p>
+          <p className="block cursor-pointer" onClick={() => scrollToSection(booksRef)}>Book</p>
+          <p className="block cursor-pointer" onClick={() => scrollToSection(bookChaptersRef)}>Book Chapters</p>
         </div>
       </div>
 
       <div className="space-y-12">
         {/* Journal Articles Section */}
-        <section ref={journalArticlesRef}>
+        <section ref={journalArticlesRef} className="scroll-mt-36">
           <h2 className="publication-heads">
             Journal Articles
           </h2>
@@ -185,7 +182,7 @@ const Resource = () => {
         </section>
 
         {/* Books Section */}
-        <section ref={booksRef}>
+        <section ref={booksRef} className="scroll-mt-36">
           <h2 className="publication-heads">Books</h2>
           <div className="publication-grid">
             {publications.books.map((book, index) => (
@@ -202,7 +199,7 @@ const Resource = () => {
         </section>
 
         {/* Book Chapters Section */}
-        <section ref={bookChaptersRef}>
+        <section ref={bookChaptersRef} className="scroll-mt-36">
           <h2 className="publication-heads">
             Book Chapters
           </h2>
@@ -224,4 +221,4 @@ const Resource = () => {
   );
 };
 
-export default Resource;
+export default Publications;

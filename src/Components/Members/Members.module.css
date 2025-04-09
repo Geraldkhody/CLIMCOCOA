@@ -1,0 +1,10 @@
+.members {
+    animation: members 1.5s ease;
+}
+
+@keyframes members {
+    from {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+}

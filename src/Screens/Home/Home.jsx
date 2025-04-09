@@ -6,7 +6,6 @@ import ClimateChnage from "@/assets/Key aspect/Climate health.png";
 import Agroforestry from "@/assets/Key aspect/agroforestry.png";
 import Socioeconomic from "@/assets/Key aspect/socioeconomic.png";
 import Capacity from "@/assets/Key aspect/Knowledge and tools.png"
-import { Archive } from 'lucide-react';
 
 // Reusable Card Component
 const Card = ({ icon, title, description, className, children }) => (
@@ -123,7 +122,7 @@ const Home = () => {
           </div>
           {/* Call-to-Action */}
           {/* the href here will go the /about path */}
-          <CTAButton href="#" text="Learn More About Our Work" />
+          <CTAButton href="/research" text="Learn More About Our Work" />
         </Section>
 
         {/* Featured Research Highlights */}
@@ -150,7 +149,7 @@ const Home = () => {
             ))}
           </div>
           {/* the href here will go to the /resource path */}
-          <CTAButton href="#" text="View All Publications" />
+          <CTAButton href="/publications" text="View All Publications" />
         </Section>
       </div>
     </div>

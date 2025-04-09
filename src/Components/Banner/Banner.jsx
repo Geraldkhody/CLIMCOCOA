@@ -1,4 +1,5 @@
 import React from "react";
+import style from "./Banner.module.css";
 
 const Banner = ({text, bannerImage}) => {
   return (
@@ -8,7 +9,7 @@ const Banner = ({text, bannerImage}) => {
     >
         <div className=" absolute  inset-0 bg-black/60 ">
           <div className="wrapper h-full flex justify-center items-center ">
-            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white ">{text}</p>
+            <p className={`${style.header} text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white `}>{text}</p>
           </div>
         </div>
     </div>

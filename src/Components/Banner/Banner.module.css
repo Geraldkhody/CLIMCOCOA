@@ -1,0 +1,9 @@
+.header {
+    animation: header 2s ease ;
+}
+
+@keyframes header {
+    from {
+        transform: translateX(-100rem);
+    }
+}

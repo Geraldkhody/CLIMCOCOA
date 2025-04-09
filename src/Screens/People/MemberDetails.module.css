@@ -1,0 +1,48 @@
+.image {
+    animation: image 1.5s ease;
+}
+
+@keyframes image {
+    from {
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+}
+
+
+.name {
+    animation: name 1.5s ease;
+}
+
+@keyframes name {
+    0%, 33.3% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+
+    
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.description {
+    animation: description 1.5s ease;
+}
+
+@keyframes description {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+
+    
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

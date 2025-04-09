@@ -1,124 +1,150 @@
-import { ArrowDown, Mail, MapPin, Pencil, PhoneCall, User } from 'lucide-react';
-import React, { useState } from 'react';
-import style from "./Contact.module.css"
+import { ArrowDown, Mail, MapPin, Pencil, PhoneCall, User } from "lucide-react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import style from "./Contact.module.css";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const formRef = useRef();
+  const [status, setStatus] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Message sent!');
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+
+    emailjs.sendForm(
+      "service_eo3kbio",
+      "template_lhe67qb",
+      formRef.current,
+      "-iLFEKCu_fxmpkQbZ"
+    )
+    .then(
+      (result) => {
+        console.log("Email sent:", result.text);
+        setStatus("✅ Message sent successfully!");
+        form.current.reset(); // Clear the form
+      },
+      (error) => {
+        console.log("Email error:", error.text);
+        setStatus("❌ Failed to send. Try again.");
+      }
+    );
   };
 
   return (
-    <div className='pb-10 pt-15'>
+    <div className="pb-10 pt-15 px-4 max-w-full">
       <div className="text-green-700">
-        <h1 className='text-center text-2xl md:text-3xl lg:text-4xl font-bold text-green-700 '>Conatct Us</h1>
-        <ArrowDown className='mx-auto mt-4 w-[28px] h-auto'  />
+        <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-green-700 ">
+          Conatct Us
+        </h1>
+        <ArrowDown className="mx-auto mt-4 w-[28px] h-auto" />
       </div>
-      <div className="wrapper flex flex-col md:flex-row md:items-center gap-8 text-green-900 w-[69rem] ">
-        <div className={`${style.left}  md:w-[40%]`}>
-          <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold'>Have Questions? <br /> Get in Touch</h1>
-          <div className='space-y-4'>
-            <div className='flex gap-4 mt-10 items-start'>
-              <div className='p-2 bg-green-200 rounded-md'><MapPin size={20} /></div>
+      <div className="wrapper flex flex-col md:flex-row md:items-center gap-8 text-green-900 max-w-[69rem]  ">
+        <div className={`${style.left} w-full md:w-[40%]`}>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+            Have Questions? <br /> Get in Touch
+          </h1>
+          <div className="space-y-4">
+            <div className="flex gap-4 mt-10 items-start">
+              <div className="p-2 bg-green-200 rounded-md">
+                <MapPin size={20} />
+              </div>
               <p>
-                <span className='location'>Climcocoa Project Office.</span>
-                <span className='location'>Department of Geography and Resource Developement.</span>
-                <span className='location'>P. O. Box LG59</span>
-                <span className='location'>UG, Legon Accra</span>
+                <span className="location">Climcocoa Project Office.</span>
+                <span className="location">
+                  Department of Geography and Resource Developement.
+                </span>
+                {/* <span className='location'>P. O. Box LG59</span> */}
+                <span className="location">UG, Legon Accra</span>
               </p>
             </div>
-            <div className='flex gap-4 items-center '>
-              <div className='p-2 bg-green-200 rounded-md'><Mail size={20} /></div>
-              <p className='text-sm'>climcocoae@ug.edu.gh</p>
+            <div className="flex gap-4 items-center ">
+              <div className="p-2 bg-green-200 rounded-md">
+                <Mail size={20} />
+              </div>
+              <p className="text-sm">climcocoae@ug.edu.gh</p>
             </div>
-            <div className='flex gap-4 items-center '>
-              <div className='p-2 bg-green-200 rounded-md'><PhoneCall size={20} /></div>
-              <p className='text-sm'>+233 279943213</p>
+            <div className="flex gap-4 items-center ">
+              <div className="p-2 bg-green-200 rounded-md">
+                <PhoneCall size={20} />
+              </div>
+              <p className="text-sm">+233 279943213</p>
             </div>
           </div>
         </div>
-      
-        <div className={`${style.right} md:w-2/3  p-8 `}>
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div className='flex gap-4'>
+
+        <div className={`${style.right} w-full md:w-2/3  p-8 `}>
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="space-y-6 sm:space-y-8"
+          >
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-4">
               <div className="input-field">
-                <div className='w-6 h-6 mx-2 '><User size={18} /></div>
+                <div className="w-6 h-6 mx-2 ">
+                  <User size={18} />
+                </div>
                 <input
                   type="text"
                   name="name"
                   placeholder="Name"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   className="input-style"
                 />
               </div>
               <div className="input-field">
-                <div className='w-6 h-6 mx-2 '><Mail size={18} /></div>
+                <div className="w-6 h-6 mx-2 ">
+                  <Mail size={18} />
+                </div>
                 <input
                   type="email"
                   name="email"
                   placeholder="Email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="input-style"
                 />
               </div>
             </div>
-            <div className='flex gap-4'>
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-4">
               <div className="input-field">
-                <div className='w-6 h-6 mx-2 '><PhoneCall size={18} /></div>
+                <div className="w-6 h-6 mx-2 ">
+                  <PhoneCall size={18} />
+                </div>
                 <input
                   type="tel"
-                  name="phone"
+                  name="phoneNumber"
                   placeholder="Phone"
-                  value={formData.phone}
-                  onChange={handleChange}
                   required
                   className="input-style"
                 />
               </div>
               <div className="input-field">
-                <div className='w-4 '></div>
+                <div className="w-4 "></div>
                 <input
                   type="text"
                   name="subject"
                   placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
                   required
                   className="input-style"
                 />
               </div>
             </div>
             <div className="textarea-field">
-                <div className='w-6 h-6 mx-2'><Pencil size={18} /></div>
+              <div className="w-6 h-6 mx-2">
+                <Pencil size={18} />
+              </div>
               <textarea
                 name="message"
                 placeholder="Your Message"
-                value={formData.message}
-                onChange={handleChange}
                 required
                 className="textarea"
               />
             </div>
-            <button type="submit" className=" bg-green-700 hover:bg-green-800 text-white text-sm font-semibold py-3 px-8 cursor-pointer rounded-lg">Send Now</button>
+            {status && <p className="text-center mt-4">{status}</p>}
+            <button
+              type="submit"
+              className="w-full md:w-auto bg-green-700 hover:bg-green-800 text-white text-sm font-semibold py-3 px-8 cursor-pointer rounded-lg"
+            >
+              Send Now
+            </button>
           </form>
         </div>
       </div>
